@@ -49,6 +49,9 @@
         .wallpaper {
             margin: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         img {
             width: 300px;
@@ -102,10 +105,12 @@
         function displayWallpapers(files) {
             const gallery = document.getElementById('gallery');
             gallery.innerHTML = '';  // Clear existing wallpapers
+
             if (files.length === 0) {
                 gallery.innerHTML = '<p style="color:white;">No wallpapers found.</p>';
                 return;
             }
+
             files.forEach(file => {
                 const imgElement = document.createElement('img');
                 imgElement.src = file.download_url;  // Load the high-res image directly
