@@ -102,6 +102,10 @@
         function displayWallpapers(files) {
             const gallery = document.getElementById('gallery');
             gallery.innerHTML = '';  // Clear existing wallpapers
+            if (files.length === 0) {
+                gallery.innerHTML = '<p style="color:white;">No wallpapers found.</p>';
+                return;
+            }
             files.forEach(file => {
                 const imgElement = document.createElement('img');
                 imgElement.src = file.download_url;  // Load the high-res image directly
@@ -125,6 +129,14 @@
             const filteredWallpapers = wallpapers.filter(file => file.name.toLowerCase().includes(searchTerm));
             displayWallpapers(filteredWallpapers);
         }
+
+        // Enter key support for the search
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                searchWallpapers();
+            }
+        });
 
         // Load and display wallpapers in the original order from GitHub
         loadWallpapers();
