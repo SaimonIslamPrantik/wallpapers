@@ -6,7 +6,7 @@ const app = express();
 const port = 3000;
 const imageFolder = path.join(__dirname, 'wallpapers');
 
-app.use(express.static(__dirname));
+app.use('/wallpapers', express.static(imageFolder));
 
 app.get('/images', (req, res) => {
     fs.readdir(imageFolder, (err, files) => {
