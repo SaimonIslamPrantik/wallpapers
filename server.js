@@ -8,7 +8,7 @@ const imageFolder = path.join(__dirname, 'wallpapers');
 
 app.use(express.static(__dirname));
 
-app.get('/wallpapers', (req, res) => {
+app.get('/images', (req, res) => {
     fs.readdir(imageFolder, (err, files) => {
         if (err) {
             return res.status(500).send('Unable to scan directory');

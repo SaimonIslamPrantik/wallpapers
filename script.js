@@ -4,7 +4,7 @@ let currentPage = 1;
 
 // Function to load wallpapers from the local images folder
 function loadWallpapers() {
-    fetch('/wallpapers')
+    fetch('/images')
         .then(response => response.json())
         .then(imageFilenames => {
             const imageFolder = 'wallpapers/'; // Path to the local images folder
