@@ -3,21 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TATBD's Ultimate Wallpapers</title>
-    <link rel="stylesheet" href="style.css">
+    <title>TATBD's Ultimate Wallpaper Repo</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div id="search-bar">
-        <input type="text" id="searchInput" placeholder="Search for the term..." />
+        <input type="text" id="searchInput" placeholder="Search for wallpapers..." aria-label="Search for wallpapers..." />
         <button id="searchButton" onclick="searchWallpapers()">Search</button>
     </div>
     <div id="gallery"></div>
-    <div id="pagination"></div>
+    <div id="pagination">
+        <button id="prevButton" disabled>Previous</button>
+        <span id="pageInfo">Page 1 of 1</span>
+        <button id="nextButton" disabled>Next</button>
+    </div>
     <footer>
-        <div id="footer-content">
-            Copyright © <span id="current-year"></span>  
-            All rights reserved by various artists.
-        </div>
+        <p>Copyright © <span id="currentYear"></span> All rights reserved by various artists.</p>
     </footer>
     <script src="script.js"></script>
 </body>

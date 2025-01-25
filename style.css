@@ -8,34 +8,13 @@ body {
     padding: 0;
     color: #eceff4;
     min-height: 100vh;
-    user-select: none; /* Disable text selection */
-}
-
-/* Custom scrollbar styles */
-::-webkit-scrollbar {
-    width: 12px;
-}
-
-::-webkit-scrollbar-track {
-    background: #3b4252;
-    border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: #5e81ac;
-    border-radius: 10px;
-    border: 3px solid #3b4252;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background-color: #81a1c1;
+    position: relative;
 }
 
 #search-bar {
     width: 100%;
     text-align: center;
     margin: 20px;
-    z-index: 1; /* Ensure search bar is above the gallery */
 }
 
 #searchInput {
@@ -66,9 +45,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
-    flex: 1;
-    overflow-y: auto; /* Enable vertical scrolling */
-    height: calc(100vh - 160px); /* Adjust height to account for search bar and footer */
+    padding-bottom: 60px; /* Add padding to avoid footer overlap */
 }
 
 .wallpaper {
@@ -88,14 +65,15 @@ img {
 }
 
 #pagination {
+    margin: 20px;
     display: flex;
     justify-content: center;
-    margin: 20px;
+    align-items: center;
+    gap: 10px;
 }
 
-.page-link {
-    margin: 0 5px;
-    padding: 10px 15px;
+#pagination button {
+    padding: 10px 20px;
     border-radius: 5px;
     border: 1px solid #4c566a;
     background-color: #5e81ac;
@@ -103,19 +81,22 @@ img {
     cursor: pointer;
 }
 
-.page-link:hover {
+#pagination button:hover {
     background-color: #81a1c1;
 }
 
-.page-link.active {
-    background-color: #81a1c1;
-    pointer-events: none;
+#pagination button:disabled {
+    background-color: #4c566a;
+    cursor: not-allowed;
 }
 
 footer {
+    position: fixed;
+    bottom: 0;
     width: 100%;
+    background-color: #3b4252;
     text-align: center;
     padding: 10px 0;
-    background-color: #2e3440;
     color: #eceff4;
+    font-size: 14px;
 }
