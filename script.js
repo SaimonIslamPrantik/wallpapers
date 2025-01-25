@@ -7,7 +7,7 @@ function loadWallpapers() {
     fetch('/wallpapers')
         .then(response => response.json())
         .then(imageFilenames => {
-            const imageFolder = 'images/'; // Path to the local images folder
+            const imageFolder = 'wallpapers/'; // Path to the local images folder
 
             // Store only image files
             wallpapers = imageFilenames.map(filename => ({
