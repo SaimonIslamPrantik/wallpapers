@@ -13,7 +13,7 @@ let cache = {
 document.getElementById('currentYear').textContent = new Date().getFullYear();
 
 async function loadWallpapers() {
-    const repoUrl = 'https://api.github.com/repos/SaimonIslamPrantik/wallpapers/contents/wallpapers'; // Updated API URL
+    const repoUrl = 'https://api.github.com/repos/TeenAgeTechBD/wallpapers/contents/wallpapers'; // Updated API URL
 
     // Check if cached data is still valid
     if (cache.data && Date.now() - cache.timestamp < cache.cacheDuration) {
